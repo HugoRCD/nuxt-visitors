@@ -8,17 +8,11 @@ export default defineNuxtModule({
   setup(_options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
-    // Enable WebSocket support
-    nuxt.options = nuxt.options || {}
-    nuxt.options.nitro = nuxt.options.nitro || {}
-    nuxt.options.nitro.experimental = nuxt.options.nitro.experimental || {}
-    nuxt.options.nitro.experimental.websocket = true
-
-    addImportsDir(resolver.resolve('runtime/composables'))
+    addImportsDir(resolver.resolve('./runtime/app/composables'))
 
     addServerHandler({
-      route: '/api/_visitors_/ws',
-      handler: resolver.resolve('./runtime/server/api/visitors.ts')
+      route: '/.nuxt-visitors/ws',
+      handler: resolver.resolve('./runtime/server/routes/visitors.ts')
     })
   }
 })

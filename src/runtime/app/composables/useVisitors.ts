@@ -35,7 +35,7 @@ export function useVisitors() {
   const getWebSocketUrl = (): string => {
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:'
     const baseUrl = window.location.host.replace(/^(http|https):\/\//, '')
-    return `${protocol}//${baseUrl}/api/_visitors_/ws`
+    return `${protocol}//${baseUrl}/.nuxt-visitors/ws`
   }
 
   /**

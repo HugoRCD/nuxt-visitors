@@ -17,6 +17,7 @@ Add live visitor counting to your Nuxt website in seconds. WebSocket-based, type
 - 🛠 Automatic connection management
 - 📊 Type-safe composable
 - 🧹 Auto cleanup on unmount
+- 🌐 Leverages [Nitro WebSocket](https://nitro.unjs.io/guide/websocket) with Pub/Sub
 
 ## Installation
 
@@ -26,29 +27,18 @@ Install the module to your Nuxt application with one command:
 npx nuxi module add nuxt-visitors
 ```
 
-<!-- automd:pm-install name="nuxt-visitors" -->
+As [Nitro WebSocket support](https://nitro.unjs.io/guide/websocket) is experimental, you need to enable it in your `nuxt.config.ts`:
 
-```sh
-# ✨ Auto-detect
-npx nypm install nuxt-visitors
-
-# npm
-npm install nuxt-visitors
-
-# yarn
-yarn add nuxt-visitors
-
-# pnpm
-pnpm install nuxt-visitors
-
-# bun
-bun install nuxt-visitors
-
-# deno
-deno install nuxt-visitors
+```ts
+export default defineNuxtConfig({
+  modules: ['nuxt-visitors'],
+  nitro: {
+    experimental: {
+      websocket: true
+    }
+  }
+})
 ```
-
-<!-- /automd -->
 
 ## Usage
 
@@ -84,6 +74,7 @@ reconnect     // () => void - Manual reconnection
 <!-- automd:fetch url="gh:hugorcd/markdown/main/src/contributions.md" -->
 
 ## Contributing
+
 To start contributing, you can follow these steps:
 
 1. First raise an issue to discuss the changes you would like to make.
