@@ -12,7 +12,7 @@ export default defineNuxtModule({
 
     addServerHandler({
       route: '/.nuxt-visitors/ws',
-      handler: resolver.resolve('./runtime/server/routes/visitors.ts')
+      handler: resolver.resolve('./runtime/server/routes/visitors')
     })
   }
 })
