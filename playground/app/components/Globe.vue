@@ -9,6 +9,8 @@ type GlobeProps = {
   tension?: number;
   friction?: number;
   precision?: number;
+  locations?: Array<{ latitude: number, longitude: number }>;
+  myLocation?: { latitude: number, longitude: number };
 };
 
 const DEFAULT_CONFIG: COBEOptions = {
@@ -25,18 +27,7 @@ const DEFAULT_CONFIG: COBEOptions = {
   baseColor: [1, 1, 1],
   markerColor: [251 / 255, 100 / 255, 21 / 255],
   glowColor: [1.2, 1.2, 1.2],
-  markers: [
-    { location: [14.5995, 120.9842], size: 0.03 },
-    { location: [19.076, 72.8777], size: 0.1 },
-    { location: [23.8103, 90.4125], size: 0.05 },
-    { location: [30.0444, 31.2357], size: 0.07 },
-    { location: [39.9042, 116.4074], size: 0.08 },
-    { location: [-23.5505, -46.6333], size: 0.1 },
-    { location: [19.4326, -99.1332], size: 0.1 },
-    { location: [40.7128, -74.006], size: 0.1 },
-    { location: [34.6937, 135.5022], size: 0.05 },
-    { location: [41.0082, 28.9784], size: 0.06 },
-  ],
+  markers: [],
 }
 
 const props = withDefaults(defineProps<GlobeProps>(), {
@@ -94,6 +85,11 @@ function onRender(state: Record<string, unknown>) {
   state.phi = phi.value + spring.r
   state.width = width.value * 2
   state.height = width.value * 2
+  state.markers = props.locations?.map(location => ({
+    location: [location.latitude, location.longitude],
+    // Set the size of the marker to 0.1 if it's the user's location, otherwise 0.05
+    size: props.myLocation?.latitude === location.latitude && props.myLocation?.longitude === location.longitude ? 0.1 : 0.05,
+  }))
 }
 
 function onResize() {
