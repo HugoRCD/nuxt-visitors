@@ -74,7 +74,6 @@ reconnect     // () => void - Manual reconnection
 <!-- automd:fetch url="gh:hugorcd/markdown/main/src/contributions.md" -->
 
 ## Contributing
-
 To start contributing, you can follow these steps:
 
 1. First raise an issue to discuss the changes you would like to make.
