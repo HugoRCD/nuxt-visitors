@@ -5,8 +5,14 @@ export default defineNuxtModule({
     name: 'nuxt-visitors',
     configKey: 'visitors'
   },
-  setup(_options, _nuxt) {
+  setup(_options, nuxt) {
     const resolver = createResolver(import.meta.url)
+
+    // Enable WebSocket support
+    nuxt.options = nuxt.options || {}
+    nuxt.options.nitro = nuxt.options.nitro || {}
+    nuxt.options.nitro.experimental = nuxt.options.nitro.experimental || {}
+    nuxt.options.nitro.experimental.websocket = true
 
     addImportsDir(resolver.resolve('runtime/composables'))
 
