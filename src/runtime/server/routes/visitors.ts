@@ -1,4 +1,5 @@
 import type { Peer } from 'crossws'
+import { defineWebSocketHandler } from 'h3'
 
 export default defineWebSocketHandler({
   open(peer: Peer) {
@@ -7,7 +8,7 @@ export default defineWebSocketHandler({
     peer.publish('nuxt-visitors', peer.peers.size)
   },
 
-  close(peer) {
+  close(peer: Peer) {
     peer.publish('nuxt-visitors', peer.peers.size)
     peer.unsubscribe('nuxt-visitors')
   }

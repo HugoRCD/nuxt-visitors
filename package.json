@@ -1,6 +1,6 @@
 {
   "name": "nuxt-visitors",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Add real-time visitor tracking to your Nuxt app with one line of code. WebSocket made easy",
   "license": "Apache-2.0",
   "type": "module",
@@ -31,6 +31,7 @@
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "release": "npm run lint && npm run test && npm run prepack",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "vitest run",
@@ -38,23 +39,22 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.15.3"
+    "@nuxt/kit": "3.15.2"
   },
   "devDependencies": {
     "@hrcd/eslint-config": "^2.1.1",
     "@nuxt/devtools": "^1.7.0",
     "@nuxt/eslint-config": "^0.7.5",
     "@nuxt/module-builder": "^0.8.4",
-    "@nuxt/schema": "^3.15.3",
+    "@nuxt/schema": "3.15.2",
     "@nuxt/test-utils": "^3.15.4",
     "@types/node": "latest",
-    "changelogen": "^0.5.7",
+    "automd": "^0.3.12",
     "eslint": "^9.19.0",
-    "nuxt": "3.15.3",
+    "nuxt": "3.15.2",
     "typescript": "5.6.3",
     "vitest": "^3.0.4",
-    "vue-tsc": "^2.2.0",
-    "automd": "^0.3.12"
+    "vue-tsc": "^2.2.0"
   },
-  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+  "packageManager": "pnpm@9.15.4"
 }

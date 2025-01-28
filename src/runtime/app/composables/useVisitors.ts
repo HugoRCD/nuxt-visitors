@@ -1,3 +1,6 @@
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useState } from '#imports'
+
 /**
  * Composable for tracking real-time website visitors count via WebSocket
  *
