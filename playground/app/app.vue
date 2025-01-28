@@ -32,7 +32,7 @@ const { visitors, myLocation, locations } = useVisitors()
           <Globe
             :my-location
             :locations
-            class="mx-auto aspect-[1/1] w-[600px] sm:w-full sm:max-w-[900px]"
+            class="mx-auto aspect-[1/1] w-[600px] sm:w-full lg:max-w-[900px] md:max-w-[700px] sm:max-w-[1000px]"
           />
           <div
             class="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))]"

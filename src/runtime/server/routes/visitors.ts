@@ -14,7 +14,7 @@ export default defineWebSocketHandler({
     peer.unsubscribe('nuxt-visitors')
     setTimeout(() => {
       const locations = Array.from(peer.peers.values()).map(peer => getQuery(peer.websocket.url!))
-      peer.publish('visitors', JSON.stringify(locations))
+      peer.publish('nuxt-visitors', JSON.stringify(locations))
     }, 500)
   }
 })
