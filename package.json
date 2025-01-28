@@ -1,10 +1,18 @@
 {
-  "name": "my-module",
+  "name": "nuxt-visitors",
   "version": "1.0.0",
   "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "type": "module",
+  "bugs": {
+    "url": "https://github.com/HugoRCD/nuxt-visitors/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HugoRCD/nuxt-visitors.git"
+  },
+  "funding": "https://github.com/sponsors/HugoRCD",
+  "author": "HugoRCD",
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
@@ -22,8 +30,9 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "release": "npm run lint && npm run test && npm run prepack",
     "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
@@ -32,6 +41,7 @@
     "@nuxt/kit": "^3.15.3"
   },
   "devDependencies": {
+    "@hrcd/eslint-config": "^2.1.1",
     "@nuxt/devtools": "^1.7.0",
     "@nuxt/eslint-config": "^0.7.5",
     "@nuxt/module-builder": "^0.8.4",
@@ -43,7 +53,8 @@
     "nuxt": "^3.15.3",
     "typescript": "~5.7.3",
     "vitest": "^3.0.4",
-    "vue-tsc": "^2.2.0"
+    "vue-tsc": "^2.2.0",
+    "automd": "^0.3.12"
   },
   "packageManager": "pnpm@8.6.5+sha1.a074a371066567dcdeb19a1d1bd9a78cf3c9faa3"
 }
