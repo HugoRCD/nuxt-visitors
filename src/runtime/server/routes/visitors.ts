@@ -4,6 +4,7 @@ import { getQuery } from 'ufo'
 
 export default defineWebSocketHandler({
   open(peer: Peer) {
+    console.log('Visitors WebSocket opened', peer.id)
     const locations = Array.from(peer.peers.values()).map(peer => getQuery(peer.websocket.url!))
     peer.subscribe('nuxt-visitors')
     peer.publish('nuxt-visitors', JSON.stringify(locations))
@@ -11,6 +12,7 @@ export default defineWebSocketHandler({
   },
 
   close(peer: Peer) {
+    console.log('Visitors WebSocket closed', peer.id)
     peer.unsubscribe('nuxt-visitors')
     setTimeout(() => {
       const locations = Array.from(peer.peers.values()).map(peer => getQuery(peer.websocket.url!))
