@@ -54,11 +54,12 @@ export function useVisitors() {
    * Handles WebSocket messages
    * @param {MessageEvent} event - WebSocket message event
    */
-  const handleMessage = (event: MessageEvent) => {
+  const handleMessage = async (event: MessageEvent) => {
     if (!isMounted.value) return
 
     try {
-      const visitorCount = parseInt(event.data, 10)
+      const data = typeof event.data === 'string' ? event.data : await event.data.text()
+      const visitorCount = parseInt(data, 10)
       if (!isNaN(visitorCount) && visitorCount >= 0) {
         visitors.value = visitorCount
       } else {
