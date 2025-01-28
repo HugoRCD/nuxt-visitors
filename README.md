@@ -1,4 +1,4 @@
-# Nuxt Active Users
+# Nuxt Visitors 👀
 
 <!-- automd:badges color=black license provider=shields name=nuxt-visitors -->
 
