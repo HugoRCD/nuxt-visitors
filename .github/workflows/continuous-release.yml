@@ -14,8 +14,11 @@ jobs:
           version: latest
           run_install: true
 
-      - name: 🛠️ Build
-        run: pnpm run build
+      - name: 🛠️ Prepare
+        run: pnpm run dev:prepare
+
+      - name: 📦 Build
+        run: pnpm run release
 
       - name: 🚀 Continuous Release
         run: npx pkg-pr-new publish '.'

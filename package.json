@@ -1,7 +1,7 @@
 {
   "name": "nuxt-visitors",
   "version": "1.0.0",
-  "description": "My new Nuxt module",
+  "description": "Add real-time visitor tracking to your Nuxt app with one line of code. WebSocket made easy",
   "license": "Apache-2.0",
   "type": "module",
   "bugs": {
@@ -50,8 +50,8 @@
     "@types/node": "latest",
     "changelogen": "^0.5.7",
     "eslint": "^9.19.0",
-    "nuxt": "^3.15.3",
-    "typescript": "~5.7.3",
+    "nuxt": "3.15.2",
+    "typescript": "5.6.3",
     "vitest": "^3.0.4",
     "vue-tsc": "^2.2.0",
     "automd": "^0.3.12"
