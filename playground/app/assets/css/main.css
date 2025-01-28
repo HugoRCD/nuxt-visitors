@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+html, body, #__nuxt, #__layout {
+  width: 100%;
+  height: 100%;
+}
+
+@theme {
+  --font-sans: 'Geist', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-neutral-50 to-neutral-600 to-50% bg-clip-text text-transparent;
+}

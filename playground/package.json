@@ -8,7 +8,12 @@
     "generate": "nuxi generate"
   },
   "dependencies": {
+    "@iconify-json/lucide": "^1.2.25",
+    "@iconify-json/simple-icons": "^1.2.22",
     "@nuxt/ui": "3.0.0-alpha.12",
-    "nuxt": "3.15.2"
+    "clsx": "^2.1.1",
+    "cobe": "^0.6.3",
+    "nuxt": "3.15.2",
+    "vue-use-spring": "^0.3.3"
   }
 }
