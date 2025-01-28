@@ -2,7 +2,7 @@ import { defineNuxtModule, createResolver, addServerHandler, addImportsDir } fro
 
 export default defineNuxtModule({
   meta: {
-    name: '@shelve/visitors',
+    name: 'nuxt-visitors',
     configKey: 'visitors'
   },
   setup(_options, _nuxt) {

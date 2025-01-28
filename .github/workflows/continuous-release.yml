@@ -1,0 +1,21 @@
+name: Publish Any Commit
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+          run_install: true
+
+      - name: 🛠️ Build
+        run: pnpm run build
+
+      - name: 🚀 Continuous Release
+        run: npx pkg-pr-new publish '.'
