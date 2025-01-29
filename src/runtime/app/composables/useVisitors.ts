@@ -21,6 +21,11 @@ import { useState } from '#imports'
 export function useVisitors() {
   // State management
   const visitors = useState<number>('visitors', () => 0) // Added default value
+  const locations = ref<Array<{ latitude: number, longitude: number }>>([])
+  const myLocation = useState('location', () => ({
+    latitude: 0,
+    longitude: 0,
+  }))
   const isLoading = ref(true)
   const error = ref<string | null>(null)
   const wsRef = ref<WebSocket | null>(null)
@@ -38,7 +43,7 @@ export function useVisitors() {
   const getWebSocketUrl = (): string => {
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:'
     const baseUrl = window.location.host.replace(/^(http|https):\/\//, '')
-    return `${protocol}//${baseUrl}/.nuxt-visitors/ws`
+    return `${ protocol }//${ baseUrl }/.nuxt-visitors/ws?latitude=${ myLocation.value.latitude }&longitude=${ myLocation.value.longitude }`
   }
 
   /**
@@ -62,7 +67,8 @@ export function useVisitors() {
 
     try {
       const data = typeof event.data === 'string' ? event.data : await event.data.text()
-      const visitorCount = parseInt(data, 10)
+      locations.value = JSON.parse(data) as { latitude: number, longitude: number }[]
+      const visitorCount = locations.value.length
       if (!isNaN(visitorCount) && visitorCount >= 0) {
         visitors.value = visitorCount
       } else {
@@ -153,6 +159,8 @@ export function useVisitors() {
 
   return {
     visitors,
+    locations,
+    myLocation,
     isLoading,
     error,
     isConnected,
