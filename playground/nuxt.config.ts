@@ -20,7 +20,6 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: 'cloudflare_durable',
     experimental: {
       websocket: true
     }
