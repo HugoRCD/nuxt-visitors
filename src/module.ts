@@ -1,7 +1,12 @@
 import { defineNuxtModule, createResolver, addServerHandler, addImportsDir, addPlugin } from '@nuxt/kit'
 
 export type ModuleOptions = {
-  location?: boolean
+  /**
+   * Allows for the anonymous tracking of current visitors' locations.
+   * The composable `useVisitors` will provide the visitor count along with an additional `locations` array and a `myLocation` object that contains the visitors' locations.
+   * @default false
+   */
+  locations?: boolean
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -10,18 +15,25 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'visitors'
   },
   defaults: {
-    location: false
+    locations: false
   },
   setup(options: ModuleOptions, nuxt) {
     const resolver = createResolver(import.meta.url)
 
     addImportsDir(resolver.resolve('./runtime/app/composables'))
 
-    addPlugin(resolver.resolve('./runtime/app/plugins/location.server'))
+    if (options.locations) {
+      addPlugin(resolver.resolve('./runtime/app/plugins/location.server'))
 
-    addServerHandler({
-      route: '/.nuxt-visitors/ws',
-      handler: resolver.resolve('./runtime/server/routes/visitors'),
-    })
+      addServerHandler({
+        route: '/.nuxt-visitors/ws',
+        handler: resolver.resolve('./runtime/server/routes/locations'),
+      })
+    } else {
+      addServerHandler({
+        route: '/.nuxt-visitors/ws',
+        handler: resolver.resolve('./runtime/server/routes/visitors'),
+      })
+    }
   }
 })

@@ -5,6 +5,10 @@ export default defineNuxtConfig({
     '@nuxthub/core',
   ],
 
+  visitors: {
+    locations: true
+  },
+
   devtools: { enabled: true },
 
   css: ['~/assets/css/main.css'],
@@ -16,6 +20,7 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    preset: 'cloudflare_durable',
     experimental: {
       websocket: true
     }
