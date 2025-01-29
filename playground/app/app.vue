@@ -28,6 +28,16 @@ const { visitors, myLocation, locations } = useVisitors()
             <p class="text-neutral-500 text-2xl">
               Current visitors: {{ visitors }}
             </p>
+            <div class="mt-4">
+              <UButton
+                icon="i-simple-icons-github"
+                label="GitHub"
+                to="https://github.com/HugoRCD/nuxt-visitors"
+                target="_blank"
+                color="neutral"
+                variant="ghost"
+              />
+            </div>
           </div>
           <Globe
             :my-location
