@@ -10,6 +10,12 @@ useHead({
 })
 
 const { visitors, myLocation, locations } = useVisitors()
+
+watch(visitors, () => {
+  useHead({
+    title: `Nuxt Visitors | ${visitors.value}`
+  })
+})
 </script>
 
 <template>
