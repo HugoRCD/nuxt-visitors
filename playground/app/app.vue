@@ -48,7 +48,7 @@ const { visitors, myLocation, locations } = useVisitors()
             class="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))]"
           />
         </div>
-        <span class="text-neutral-500 dark:text-neutral-400 text-xs absolute bottom-4 right-4 sm:left-4 italic font-mono">
+        <span class="text-neutral-500 dark:text-neutral-400 text-xs absolute bottom-4 left-4 italic font-mono">
           Made by <ULink to="https://x.com/hugorcd__">@HugoRCD__</ULink> and <ULink to="https://x.com/atinux">@Atinux</ULink>
         </span>
       </UApp>
