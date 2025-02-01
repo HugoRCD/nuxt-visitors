@@ -1,6 +1,6 @@
 {
   "name": "nuxt-visitors",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Add real-time visitor tracking to your Nuxt app with one line of code. WebSocket made easy",
   "license": "Apache-2.0",
   "type": "module",
