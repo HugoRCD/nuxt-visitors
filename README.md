@@ -19,6 +19,14 @@ Add live visitor counting to your Nuxt website in seconds. WebSocket-based, type
 - 🧹 Auto cleanup on unmount
 - 🌐 Leverages [Nitro WebSocket](https://nitro.unjs.io/guide/websocket) with Pub/Sub
 
+> **New (Experimental):** Anonymous tracking of visitors' locations!
+>
+> When enabled, the module tracks visitor locations. The `useVisitors` composable will additionally provide:
+> - A `locations` array: lists locations of all visitors.
+> - A `myLocation` object: contains the specific geolocation data for the current visitor.
+>
+> **Note:** This feature is experimental and may be subject to future changes.
+
 ## Installation
 
 Install the module to your Nuxt application with one command:
@@ -39,6 +47,27 @@ export default defineNuxtConfig({
   }
 })
 ```
+
+### Configuration
+
+The module accepts an optional configuration to enable location tracking. In your `nuxt.config.ts`, you can enable it as follows:
+
+```ts
+export default defineNuxtConfig({
+  modules: ['nuxt-visitors'],
+  visitors: {
+    // Set to true to enable tracking of visitor locations
+    locations: true
+  },
+  nitro: {
+    experimental: {
+      websocket: true
+    }
+  }
+})
+```
+
+This will enable the `locations` and `myLocation` properties in the composable, as well as the `locations` property in the composable's return object.
 
 ## Usage
 
@@ -63,11 +92,13 @@ That's it! The module handles everything else automatically:
 The composable provides additional features:
 ```ts
 const {
-visitors,     // Ref<number> - Current visitor count
-isConnected,  // Ref<boolean> - Connection status
-isLoading,    // Ref<boolean> - Loading state
-error,        // Ref<string | null> - Error message if any
-reconnect     // () => void - Manual reconnection
+  visitors,     // Ref<number> - Current visitor count
+  locations,    // Ref<Location[]> - Array of geolocation objects for all visitors (if `locations: true`)
+  myLocation,   // Ref<Location | null> - Geolocation of the current visitor (if `locations: true`)
+  isConnected,  // Ref<boolean> - Connection status
+  isLoading,    // Ref<boolean> - Loading state
+  error,        // Ref<string | null> - Error message if any
+  reconnect     // () => void - Manual reconnection
 } = useVisitors()
 ```
 
