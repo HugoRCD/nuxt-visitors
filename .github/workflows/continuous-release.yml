@@ -12,7 +12,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npx nypm@latest i
+        run: pnpm install
 
       - name: 🛠️ Prepare
         run: pnpm run dev:prepare
