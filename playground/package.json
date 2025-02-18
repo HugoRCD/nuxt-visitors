@@ -19,5 +19,10 @@
   },
   "devDependencies": {
     "wrangler": "^3.109.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3"
+    ]
   }
 }
