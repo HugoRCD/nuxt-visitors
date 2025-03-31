@@ -122,6 +122,20 @@ To start contributing, you can follow these steps:
 
 <!-- /automd -->
 
+<!-- automd:fetch url="gh:hugorcd/markdown/main/src/sponsors.md" -->
+
+## Sponsors
+
+<p align="center">
+  <a href="https://cdn.jsdelivr.net/gh/hugorcd/static/sponsors.svg">
+    <img src='https://cdn.jsdelivr.net/gh/hugorcd/static/sponsors.svg' alt="HugoRCD sponsors" />
+  </a>
+</p>
+
+<!-- /automd -->
+
+## Contributors
+
 <!-- automd:contributors license=Apache author=HugoRCD github=HugoRCD/nuxt-visitors -->
 
 Published under the [APACHE](https://github.com/HugoRCD/nuxt-visitors/blob/main/LICENSE) license.
