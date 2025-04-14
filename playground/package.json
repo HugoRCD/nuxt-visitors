@@ -8,16 +8,16 @@
     "generate": "nuxi generate"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.26",
-    "@iconify-json/simple-icons": "^1.2.24",
-    "@nuxt/ui": "3.0.0-alpha.13",
-    "@nuxthub/core": "0.8.17",
+    "@iconify-json/lucide": "^1.2.36",
+    "@iconify-json/simple-icons": "^1.2.32",
+    "@nuxt/ui": "3.0.2",
+    "@nuxthub/core": "0.8.24",
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
     "nuxt": "3.15.4",
     "vue-use-spring": "^0.3.3"
   },
   "devDependencies": {
-    "wrangler": "^3.109.1"
+    "wrangler": "^3.114.6"
   }
 }
