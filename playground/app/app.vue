@@ -11,6 +11,12 @@ useHead({
 
 const { visitors, myLocation, locations } = useVisitors()
 
+useSeoMeta({
+  description: 'Showing the current number or location of visitors using a single composable',
+  ogImage: '/og.png',
+  twitterImage: '/og.png',
+})
+
 watch(visitors, () => {
   useHead({
     title: `Nuxt Visitors | ${visitors.value}`

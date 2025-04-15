@@ -13,7 +13,7 @@ jobs:
       id-token: write
     defaults:
       run:
-        working-directory: ./playground
+        working-directory: .
 
     steps:
       - uses: actions/checkout@v4
@@ -34,7 +34,7 @@ jobs:
         run: pnpm run dev:prepare
 
       - name: Build application
-        run: pnpm build
+        run: pnpm run dev:build
 
       - name: Deploy to NuxtHub
         uses: nuxt-hub/action@v1
