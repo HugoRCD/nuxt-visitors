@@ -13,6 +13,8 @@ import { useState } from '#imports'
  *
  * @returns {Object} An object containing:
  *  - visitors: Ref<number> - Current number of visitors
+ *  - locations: Ref<Location[]> - Array of geolocation objects for all visitors (if `locations: true`)
+ *  - myLocation: Ref<Location | null> - Geolocation of the current visitor (if `locations: true`)
  *  - isLoading: Ref<boolean> - Loading state indicator
  *  - error: Ref<string | null> - Error message if any
  *  - isConnected: Ref<boolean> - WebSocket connection status

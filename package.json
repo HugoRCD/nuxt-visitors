@@ -1,6 +1,6 @@
 {
   "name": "nuxt-visitors",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Add real-time visitor tracking to your Nuxt app with one line of code. WebSocket made easy",
   "license": "Apache-2.0",
   "type": "module",
@@ -15,13 +15,11 @@
   "author": "HugoRCD",
   "exports": {
     ".": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "types": "./dist/module.d.mts",
+      "import": "./dist/module.mjs"
     }
   },
-  "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
+  "main": "./dist/module.mjs",
   "files": [
     "dist"
   ],
@@ -44,17 +42,17 @@
   },
   "devDependencies": {
     "@hrcd/eslint-config": "edge",
-    "@nuxt/devtools": "^1.7.0",
-    "@nuxt/module-builder": "^0.8.4",
+    "@nuxt/devtools": "^2.4.0",
+    "@nuxt/module-builder": "^1.0.1",
     "@nuxt/schema": "3.16.2",
     "@nuxt/test-utils": "^3.17.2",
     "@types/node": "latest",
     "automd": "^0.4.0",
     "eslint": "^9.24.0",
-    "nuxt": "3.15.4",
+    "nuxt": "3.16.0",
     "typescript": "5.8.3",
     "vitest": "^3.1.1",
     "vue-tsc": "^2.2.8"
   },
-  "packageManager": "pnpm@9.15.9"
+  "packageManager": "pnpm@10.8.1"
 }
