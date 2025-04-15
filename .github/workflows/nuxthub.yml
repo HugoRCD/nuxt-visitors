@@ -13,15 +13,13 @@ jobs:
       id-token: write
     defaults:
       run:
-        working-directory: ./playground
+        working-directory: .
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9
 
       - name: Install Node.js
         uses: actions/setup-node@v4
@@ -32,11 +30,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Dev prepare
+        run: pnpm run dev:prepare
+
       - name: Ensure NuxtHub module is installed
         run: pnpx nuxthub@latest ensure
 
       - name: Build application
-        run: pnpm build
+        run: pnpm run dev:build
 
       - name: Deploy to NuxtHub
         uses: nuxt-hub/action@v1
