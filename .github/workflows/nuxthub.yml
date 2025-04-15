@@ -13,7 +13,7 @@ jobs:
       id-token: write
     defaults:
       run:
-        working-directory: ./playground
+        working-directory: .
 
     steps:
       - uses: actions/checkout@v4
@@ -31,6 +31,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Dev prepare
+        run: pnpm run dev:prepare
 
       - name: Ensure NuxtHub module is installed
         run: pnpx nuxthub@latest ensure
