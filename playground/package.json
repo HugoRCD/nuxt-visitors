@@ -18,6 +18,6 @@
     "vue-use-spring": "^0.3.3"
   },
   "devDependencies": {
-    "wrangler": "^3.114.6"
+    "wrangler": "^4.11.0"
   }
 }
