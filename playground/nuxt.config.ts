@@ -9,6 +9,10 @@ export default defineNuxtConfig({
     locations: true
   },
 
+  hub: {
+    workers: true
+  },
+
   devtools: { enabled: true },
 
   css: ['~/assets/css/main.css'],
