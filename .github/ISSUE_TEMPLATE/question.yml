@@ -1,6 +1,6 @@
-name: "💬 Question"
+name: 💬 Question
 description: Ask a question about the project.
-labels: ["question"]
+labels: [question]
 body:
   - type: markdown
     attributes:
