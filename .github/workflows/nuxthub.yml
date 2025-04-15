@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Dev prepare
+        run: pnpm run dev:prepare
+
       - name: Build application
         run: pnpm build
 
