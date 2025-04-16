@@ -22,7 +22,7 @@ import { useState } from '#imports'
  */
 export function useVisitors() {
   // State management
-  const visitors = useState<number>('visitors', () => 0) // Added default value
+  const visitors = useState<number>('visitors', () => 0)
   const locations = ref<Array<{ latitude: number, longitude: number }>>([])
   const myLocation = useState('location', () => ({
     latitude: 0,
@@ -66,17 +66,16 @@ export function useVisitors() {
    */
   const handleMessage = async (event: MessageEvent) => {
     if (!isMounted.value) return
-
     try {
       const data = typeof event.data === 'string' ? event.data : await event.data.text()
-      locations.value = JSON.parse(data) as { latitude: number, longitude: number }[]
-      const visitorCount = locations.value.length
-      if (!isNaN(visitorCount) && visitorCount >= 0) {
-        visitors.value = visitorCount
-      } else {
-        throw new Error('Invalid visitor count received')
+      const payload = JSON.parse(data)
+      if (!Array.isArray(payload) && !isNaN(payload) && payload >= 0) {
+        visitors.value = payload
+      } else if (Array.isArray(payload)) {
+        locations.value = payload
+        visitors.value = payload.length
       }
-    } catch (err) {
+    } catch (err: unknown) {
       console.error('Failed to parse visitors WebSocket data:', err)
       error.value = 'Invalid data received'
     }

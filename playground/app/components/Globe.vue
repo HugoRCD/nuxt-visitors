@@ -2,6 +2,11 @@
 import createGlobe, { type COBEOptions } from 'cobe'
 import { useSpring } from 'vue-use-spring'
 
+type Location = {
+  latitude: number;
+  longitude: number;
+};
+
 type GlobeProps = {
   class?: string;
   config?: Partial<COBEOptions>;
@@ -9,8 +14,8 @@ type GlobeProps = {
   tension?: number;
   friction?: number;
   precision?: number;
-  locations?: Array<{ latitude: number, longitude: number }>;
-  myLocation?: { latitude: number, longitude: number };
+  locations?: Location[];
+  myLocation?: Location
 };
 
 const DEFAULT_CONFIG: COBEOptions = {
@@ -35,6 +40,7 @@ const props = withDefaults(defineProps<GlobeProps>(), {
   tension: 280,
   friction: 100,
   precision: 0.001,
+  locations: () => [],
 })
 
 const globeCanvasRef = ref<HTMLCanvasElement>()
@@ -81,11 +87,10 @@ function onRender(state: Record<string, unknown>) {
   if (!pointerInteracting.value) {
     phi.value += 0.005
   }
-
   state.phi = phi.value + spring.r
   state.width = width.value * 2
   state.height = width.value * 2
-  state.markers = props.locations?.map(location => ({
+  state.markers = props.locations.map(location => ({
     location: [location.latitude, location.longitude],
     // Set the size of the marker to 0.1 if it's the user's location, otherwise 0.05
     size: props.myLocation?.latitude === location.latitude && props.myLocation?.longitude === location.longitude ? 0.1 : 0.05,
