@@ -1,4 +1,4 @@
-import { defineNuxtPlugin, useRequestEvent, useState } from 'nuxt/app'
+import { defineNuxtPlugin, useRequestEvent, useState } from '#imports'
 
 export default defineNuxtPlugin(() => {
   const event = useRequestEvent()
