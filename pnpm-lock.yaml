@@ -64,13 +64,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0(@babel/parser@7.27.0)(change-case@5.4.4)(db0@0.3.1)(embla-carousel@8.6.0)(ioredis@5.6.1)(magicast@0.3.5)(typescript@5.8.3)(vite@6.2.6(@types/node@22.15.2)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))(vue-router@4.5.0(vue@3.5.13(typescript@5.8.3)))(vue@3.5.13(typescript@5.8.3))(zod@3.24.2)
       '@nuxthub/core':
-<<<<<<< HEAD
         specifier: ^0.8.25
-        version: 0.8.25(db0@0.3.1)(ioredis@5.6.1)(magicast@0.3.5)(vite@6.2.6(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))
-=======
-        specifier: 0.8.25
         version: 0.8.25(db0@0.3.1)(ioredis@5.6.1)(magicast@0.3.5)(vite@6.2.6(@types/node@22.15.2)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))
->>>>>>> origin/main
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -5954,11 +5949,7 @@ snapshots:
       - vue-tsc
       - yaml
 
-<<<<<<< HEAD
-  '@nuxthub/core@0.8.25(db0@0.3.1)(ioredis@5.6.1)(magicast@0.3.5)(vite@6.2.6(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))':
-=======
   '@nuxthub/core@0.8.25(db0@0.3.1)(ioredis@5.6.1)(magicast@0.3.5)(vite@6.2.6(@types/node@22.15.2)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))':
->>>>>>> origin/main
     dependencies:
       '@cloudflare/workers-types': 4.20250415.0
       '@nuxt/devtools-kit': 2.4.0(magicast@0.3.5)(vite@6.2.6(@types/node@22.15.2)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))
