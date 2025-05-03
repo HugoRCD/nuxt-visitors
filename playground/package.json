@@ -11,14 +11,14 @@
     "@nuxthub/core": "^0.8.25",
     "@iconify-json/lucide": "^1.2.39",
     "@iconify-json/simple-icons": "^1.2.33",
-    "@nuxt/ui": "3.1.0",
+    "@nuxt/ui": "3.1.1",
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
     "nuxt": "3.17.1",
     "vue-use-spring": "^0.3.3"
   },
   "devDependencies": {
-    "wrangler": "^4.13.2"
+    "wrangler": "^4.14.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
