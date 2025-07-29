@@ -14,7 +14,7 @@
     "@nuxt/ui": "3.3.0",
     "clsx": "^2.1.1",
     "cobe": "^0.6.4",
-    "nuxt": "3.17.7",
+    "nuxt": "3.18.0",
     "vue-use-spring": "^0.3.3"
   },
   "devDependencies": {
