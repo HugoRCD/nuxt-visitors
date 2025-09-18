@@ -9,16 +9,16 @@
   },
   "dependencies": {
     "@nuxthub/core": "^0.9.0",
-    "@iconify-json/lucide": "^1.2.66",
-    "@iconify-json/simple-icons": "^1.2.50",
-    "@nuxt/ui": "3.3.3",
+    "@iconify-json/lucide": "^1.2.68",
+    "@iconify-json/simple-icons": "^1.2.52",
+    "@nuxt/ui": "3.3.4",
     "clsx": "^2.1.1",
-    "cobe": "^0.6.4",
-    "nuxt": "3.19.1",
+    "cobe": "^0.6.5",
+    "nuxt": "3.19.2",
     "vue-use-spring": "^0.3.3"
   },
   "devDependencies": {
-    "wrangler": "^4.35.0"
+    "wrangler": "^4.37.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
