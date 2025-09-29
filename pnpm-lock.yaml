@@ -80,8 +80,8 @@ importers:
         version: 0.3.3(vue@3.5.21(typescript@5.9.2))
     devDependencies:
       wrangler:
-        specifier: ^4.40.1
-        version: 4.40.1
+        specifier: ^4.40.2
+        version: 4.40.2
 
 packages:
 
@@ -5810,8 +5810,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@4.40.1:
-    resolution: {integrity: sha512-XQEHOW6g1zW2xnBq1dmhDbEiVBbPGh7mX1tQAUMqKETa61XXvxHCJSzVI3is5xuo9HzZ8ITzg4VnhB/91cg9DQ==}
+  wrangler@4.40.2:
+    resolution: {integrity: sha512-wcev8GF6GU4ME5AsYY/gUehHrGdRiUCkifuyCeuVvpOtha3TMK4/s39x+jLuJBRtibpgejDekO68rqxfamf16A==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -12642,7 +12642,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20250924.0
       '@cloudflare/workerd-windows-64': 1.20250924.0
 
-  wrangler@4.40.1:
+  wrangler@4.40.2:
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
       '@cloudflare/unenv-preset': 2.7.4(unenv@2.0.0-rc.21)(workerd@1.20250924.0)
