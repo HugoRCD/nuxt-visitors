@@ -48,11 +48,11 @@
     "@nuxt/test-utils": "^3.19.2",
     "@types/node": "latest",
     "automd": "^0.4.2",
-    "eslint": "^9.37.0",
+    "eslint": "^9.38.0",
     "nuxt": "3.19.3",
     "typescript": "5.9.3",
     "vitest": "^3.2.4",
     "vue-tsc": "^2.2.12"
   },
-  "packageManager": "pnpm@10.18.2"
+  "packageManager": "pnpm@10.18.3"
 }
