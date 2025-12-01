@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@nuxthub/core": "^0.9.1",
-    "@iconify-json/lucide": "^1.2.76",
-    "@iconify-json/simple-icons": "^1.2.60",
+    "@iconify-json/lucide": "^1.2.77",
+    "@iconify-json/simple-icons": "^1.2.61",
     "@nuxt/ui": "3.3.7",
     "clsx": "^2.1.1",
     "cobe": "^0.6.5",
